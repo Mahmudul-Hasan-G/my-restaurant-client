@@ -48,6 +48,13 @@ const SignUp = () => {
         </div>
         <div className="form-control">
           <label className="label">
+            <span className="label-text">Photo URL</span>
+          </label>
+          <input type="text" {...register("photoURL", { required: true })} placeholder="Photo URL" className="input input-bordered" />
+          {errors.photoURL && <span className='text-red-600'>Photo URL is required</span>}
+        </div>
+        <div className="form-control">
+          <label className="label">
             <span className="label-text">Email</span>
           </label>
           <input type="email" {...register("email", { required: true })} name='email' placeholder="email" className="input input-bordered" />
@@ -66,7 +73,7 @@ const SignUp = () => {
           {errors.password?.type === 'required' && <p className='text-red-600'>Password is required</p>}
           {errors.password?.type === 'minLength' && <p className='text-red-600'>Password must be 6 character</p>}
           {errors.password?.type === 'maxLength' && <p className='text-red-600'>Password must be less than 20 character</p>}
-          {errors.password?.type === 'pattern' && <p className='text-red-600'>Password must have 1 capital letter, 1 small letter, 1 number and 1 spetial character</p>}
+          {errors.password?.type === 'pattern' && <p className='text-red-600'>Password must have 1 capital letter, 1 small letter, 1 number and 1 spatial character</p>}
 
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
